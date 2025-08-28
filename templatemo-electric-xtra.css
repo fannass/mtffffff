@@ -16,6 +16,12 @@ https://templatemo.com/tm-596-electric-xtra
             box-sizing: border-box;
         }
 
+        html {
+            /* Prevent unintended text auto-zoom on iOS */
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
         body {
             font-family: 'Rajdhani', sans-serif;
             background: #0a0a0a;
@@ -23,6 +29,34 @@ https://templatemo.com/tm-596-electric-xtra
             overflow-x: hidden;
             position: relative;
             font-weight: 400;
+        }
+
+        /* Global text justification for readable paragraphs across all pages */
+        p {
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+        }
+
+        /* Justify list text in content sections (avoid nav) */
+        .feature-list li,
+        .content-panel p,
+        .about-text p,
+        .timeline-content p,
+        .contact-container p,
+        .footer-content p {
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+        }
+
+        /* Media elements scale within containers */
+        img,
+        svg,
+        video {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Animated background with hexagon pattern */
@@ -169,7 +203,7 @@ https://templatemo.com/tm-596-electric-xtra
             backdrop-filter: blur(10px);
             z-index: 1000;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(255, 94, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 125, 247, 0.2);
         }
 
         nav.scrolled {
@@ -259,8 +293,8 @@ https://templatemo.com/tm-596-electric-xtra
 
         .nav-links a:hover::before,
         .nav-links a.active::before {
-            border-color: #FF5E00;
-            box-shadow: inset 0 0 10px rgba(255, 94, 0, 0.5);
+            border-color: #00B2FF;
+            box-shadow: inset 0 0 10px rgba(0, 178, 255, 0.5);
         }
 
         .nav-links a::after {
@@ -270,9 +304,15 @@ https://templatemo.com/tm-596-electric-xtra
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #FF5E00, #00B2FF);
+            background: linear-gradient(90deg, #007df7, #00B2FF);
             transition: width 0.3s ease;
             box-shadow: 0 0 10px rgba(255, 94, 0, 0.8);
+        }
+
+        /* Match underline glow to blue */
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            box-shadow: 0 0 10px rgba(0, 178, 255, 0.7);
         }
 
         .nav-links a:hover::after,
@@ -362,6 +402,7 @@ https://templatemo.com/tm-596-electric-xtra
             letter-spacing: 0.1em;
             text-shadow: 0 0 20px rgba(255, 94, 0, 0.5);
             overflow: hidden;
+            margin: 0 0 8px; /* ensure space before subtitle */
         }
 
         .char {
@@ -395,6 +436,7 @@ https://templatemo.com/tm-596-electric-xtra
             opacity: 0;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
             font-weight: 300;
+            text-align: center; /* keep centered under H1 */
         }
 
         .subtitle.visible {
@@ -475,6 +517,7 @@ https://templatemo.com/tm-596-electric-xtra
             animation: fade-in 1s ease-out 0.5s both;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
             font-weight: 300;
+            text-align: center; /* keep centered under H1 */
         }
 
         @keyframes fade-in {
@@ -589,9 +632,25 @@ https://templatemo.com/tm-596-electric-xtra
             align-items: start;
         }
 
+        /* Content imagery helpers */
+        .info-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+        }
+
+        .dresscode-gallery,
+        .atribut-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
         .feature-tabs {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 94, 0, 0.2);
+            border: 1px solid rgba(0, 125, 247, 0.25);
             border-radius: 10px;
             padding: 20px;
             backdrop-filter: blur(10px);
@@ -612,14 +671,14 @@ https://templatemo.com/tm-596-electric-xtra
         }
 
         .tab-item:hover {
-            background: rgba(255, 94, 0, 0.1);
-            border-color: rgba(255, 94, 0, 0.3);
+            background: rgba(0, 125, 247, 0.12);
+            border-color: rgba(0, 178, 255, 0.4);
         }
 
         .tab-item.active {
-            background: linear-gradient(45deg, rgba(255, 94, 0, 0.2), rgba(0, 178, 255, 0.2));
-            border-color: #FF5E00;
-            box-shadow: 0 0 20px rgba(255, 94, 0, 0.3);
+            background: linear-gradient(45deg, rgba(0, 125, 247, 0.2), rgba(0, 178, 255, 0.2));
+            border-color: #00B2FF;
+            box-shadow: 0 0 20px rgba(0, 178, 255, 0.35);
         }
 
         .tab-icon {
@@ -628,11 +687,13 @@ https://templatemo.com/tm-596-electric-xtra
 
         .feature-content {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 94, 0, 0.2);
+            border: 1px solid rgba(0, 125, 247, 0.25);
             border-radius: 10px;
             padding: 40px;
             backdrop-filter: blur(10px);
             min-height: 400px;
+            /* Prevent content from forcing horizontal overflow in grid */
+            min-width: 0;
         }
 
         .content-panel {
@@ -648,7 +709,7 @@ https://templatemo.com/tm-596-electric-xtra
             font-family: 'Orbitron', monospace;
             font-size: 2rem;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #ffffff, #FF5E00);
+            background: linear-gradient(45deg, #ffffff, #00B2FF);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -659,6 +720,14 @@ https://templatemo.com/tm-596-electric-xtra
             opacity: 0.8;
             margin-bottom: 20px;
             font-size: 1.1rem;
+        }
+
+        /* Preformatted blocks: wrap long content on mobile to avoid clipping */
+        .content-panel pre {
+            white-space: pre-wrap; /* preserve newlines, allow wrapping */
+            word-wrap: break-word;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .feature-list {
@@ -961,7 +1030,7 @@ https://templatemo.com/tm-596-electric-xtra
         /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.8);
-            border-top: 1px solid rgba(255, 94, 0, 0.2);
+            border-top: 1px solid rgba(0, 125, 247, 0.25);
             padding: 40px 20px;
             text-align: center;
         }
@@ -969,6 +1038,11 @@ https://templatemo.com/tm-596-electric-xtra
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        /* Center footer text (override global paragraph justification) */
+        footer .footer-content p {
+            text-align: center;
         }
 
         .footer-links {
@@ -993,6 +1067,7 @@ https://templatemo.com/tm-596-electric-xtra
         .copyright {
             opacity: 0.6;
             font-size: 0.9rem;
+            text-align: center;
         }
 
         .copyright a {
@@ -1134,4 +1209,86 @@ https://templatemo.com/tm-596-electric-xtra
             .shape-square {
                 transform: scale(0.6);
             }
+        }
+
+        /* Tablet adjustments */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 15px 24px;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+
+            /* Use mobile-style menu on tablets too to avoid cramped layout */
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(10, 10, 10, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: start;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+                gap: 20px;
+            }
+
+            .nav-links.active { left: 0; }
+            .menu-toggle { display: flex; }
+
+            /* Stack main two-column sections */
+            .features-container { grid-template-columns: 1fr; }
+            .about-content { grid-template-columns: 1fr; gap: 32px; }
+            .contact-container { grid-template-columns: 1fr; gap: 32px; }
+
+            .feature-content { padding: 28px; }
+            .section-title { font-size: 2.2rem; margin-bottom: 40px; }
+
+            /* Keep CTA visible without overlap */
+            .cta-container {
+                position: static;
+                transform: none;
+                margin-top: 24px;
+            }
+
+            .dresscode-gallery,
+            .atribut-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Small mobile adjustments */
+        @media (max-width: 600px) {
+            .section-title { font-size: 1.8rem; }
+            .feature-content { padding: 20px; }
+            .features { padding: 70px 16px; }
+            .about { padding: 70px 16px; }
+            .contact { padding: 70px 16px; }
+
+            .cta-button { width: 100%; max-width: 320px; }
+
+            /* Make sure form fields don't trigger zoom */
+            input, select, textarea { font-size: 16px; }
+
+            .dresscode-gallery,
+            .atribut-gallery { grid-template-columns: 1fr; }
+
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 14px 22px;
+            }
+
+            /* Reduce decorative shapes prominence */
+            .shape-circle,
+            .shape-triangle,
+            .shape-square { transform: scale(0.45); opacity: 0.08; }
+
+            /* Avoid overflow in tabs content */
+            .feature-tabs, .feature-content { max-width: 100%; overflow-x: hidden; }
+            .content-panel pre { font-size: 0.95rem; }
+            .content-panel img { max-width: 100%; height: auto; }
         }

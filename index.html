@@ -6,6 +6,8 @@
     <title>MATAF FST 2025 - Selamat Datang</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="templatemo-electric-xtra.css" rel="stylesheet">
+    <link rel="icon" href="images/logomataf.svg" type="image/svg+xml" sizes="any">
+    <link rel="shortcut icon" href="images/logomataf.svg" type="image/svg+xml">
 <!--
 
 TemplateMo 596 Electric Xtra
@@ -38,10 +40,10 @@ https://templatemo.com/tm-596-electric-xtra
                 <span class="logo-text">MATAF FST 2025</span>
             </a>
             
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="informasi.html">Informasi</a></li>
-                <li><a href="penugasan.html">Penugasan</a></li>
+            <ul class="nav-links" id="navLinks" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link active" role="menuitem">Beranda</a></li>
+                <li role="none"><a href="informasi.html" class="nav-link" role="menuitem">Informasi</a></li>
+                <li role="none"><a href="penugasan.html" class="nav-link" role="menuitem">Penugasan</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
@@ -51,18 +53,32 @@ https://templatemo.com/tm-596-electric-xtra
         </div>
     </nav>
 
+    <main>
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content" id="home">
+        <div class="hero-content">
             <div class="text-rotator">
                 <div class="text-set active">
-                    <h1 class="glitch-text">MATAF FST 2025</h1>
+                    <h1 class="glitch-text" data-text="MATAF FST 2025">MATAF FST 2025</h1>
+                    <p class="subtitle">Sains & Teknologi dalam Bingkai Budaya</p>
+                </div>
+                <div class="text-set">
+                    <h1 class="glitch-text" data-text="Revive">Revive</h1>
+                    <p class="subtitle">Sains & Teknologi dalam Bingkai Budaya</p>
+                </div>
+                <div class="text-set">
+                    <h1 class="glitch-text" data-text="Preserve">Preserve</h1>
+                    <p class="subtitle">Sains & Teknologi dalam Bingkai Budaya</p>
+                </div>
+                <div class="text-set">
+                    <h1 class="glitch-text" data-text="Evolve">Evolve</h1>
+                    <p class="subtitle">Sains & Teknologi dalam Bingkai Budaya</p>
                 </div>
             </div>
         </div>
         <div class="cta-container">
-            <a href="#features" class="cta-button cta-primary">Get Started</a>
-            <a href="#about" class="cta-button cta-secondary">Learn More</a>
+            <label for="trailer-toggle" class="cta-button cta-primary" role="button">Video Trailer MATAF</label>
+            <a href="#about" class="cta-button cta-secondary">Tentang MATAF</a>
         </div>
     </section>
 
@@ -95,6 +111,30 @@ https://templatemo.com/tm-596-electric-xtra
         </div>
     </div>
 </section>
+
+<!-- Checkbox toggle for modal -->
+<input type="checkbox" id="trailer-toggle" class="modal-toggle" hidden>
+
+<!-- Trailer Modal (CSS-only using checkbox :checked) -->
+<div class="modal">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Video Trailer MATAF">
+        <label for="trailer-toggle" class="modal-close" aria-label="Tutup">×</label>
+        <div class="modal-body">
+            <div class="video-wrapper">
+                <video controls playsinline preload="metadata">
+                    <source src="video/trailer.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutar video HTML5.
+                </video>
+            </div>
+            <div class="modal-actions">
+                <label for="trailer-toggle" class="btn-close-modal" aria-label="Tutup Video">Tutup Video</label>
+            </div>
+        </div>
+    </div>
+    <label for="trailer-toggle" class="modal-backdrop" aria-hidden="true"></label>
+    <span class="modal-sr">Tekan tombol tutup untuk menutup video</span>
+    
+</div>
 
 
 <!-- Timeline Section -->
@@ -187,63 +227,142 @@ https://templatemo.com/tm-596-electric-xtra
 }
 
 /* Responsive */
-@media(max-width:768px) {
-  .timeline-container::before { left: 20px; }
-  .timeline-item { width: 100%; left: 0; padding-left: 50px; margin-bottom: 30px; }
-  .timeline-item.right .timeline-content { border-right: none; border-left: 4px solid #007df7; }
+@media(max-width:1024px) {
+        .timeline-container::before { left: 24px !important; }
+        .timeline-item { width: 100% !important; left: 0 !important; padding-left: 56px !important; margin-bottom: 30px !important; box-sizing: border-box; }
+        .timeline-item.right .timeline-content { border-right: none !important; border-left: 4px solid #007df7 !important; }
+        .timeline-content { width: auto; overflow-wrap: anywhere; }
 }
+
+@media(max-width:768px) {
+    .timeline-container::before { left: 20px !important; }
+    .timeline-item { width: 100% !important; left: 0 !important; padding-left: 50px !important; margin-bottom: 30px !important; }
+    .timeline-item.right .timeline-content { border-right: none !important; border-left: 4px solid #007df7 !important; }
+}
+</style>
+
+<style>
+/* Page-level responsive fixes for Home (index only) */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+/* Sticky footer layout */
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1 0 auto; width: 100%; }
+footer { flex-shrink: 0; width: 100%; }
+
+/* Make footer content full-bleed on this page */
+.footer-content { max-width: 100%; margin: 0; padding-left: 20px; padding-right: 20px; }
+
+/* Ensure CTA does not overlap on smaller screens */
+@media (max-width: 1024px) {
+    .cta-container { position: static !important; transform: none !important; margin-top: 24px; }
+}
+
+/* Small phones comfort */
+@media (max-width: 600px) {
+    .section-title { font-size: 1.8rem; }
+}
+
+/* Prevent any horizontal overflow */
+html, body { width: 100%; overflow-x: hidden !important; }
+
+/* Tablet: ensure single-column content and mobile nav */
+@media (max-width: 1024px) {
+    .about-content { display: grid; grid-template-columns: 1fr !important; gap: 32px; }
+    .nav-links {
+        position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px);
+        background: rgba(10,10,10,0.95); flex-direction: column; align-items: center; justify-content: start;
+        padding-top: 50px; transition: left 0.3s ease; gap: 20px;
+    }
+    .nav-links.active { left: 0; }
+    .menu-toggle { display: flex !important; }
+}
+
+/* Footer: ensure full width visuals and wrapping links */
+footer { width: 100%; margin: 0; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 22px; }
+
+/* Trailer Modal */
+.modal { position: fixed; inset: 0; display: none; z-index: 2000; }
+.modal-toggle:checked + .modal { display: block; }
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(2px); z-index: 0; }
+.modal-dialog { position: relative; z-index: 1; max-width: 900px; width: calc(100% - 32px); margin: 64px auto; background: rgba(10,10,10,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+.modal-body { padding: 16px; }
+.modal-close { position: absolute; top: 8px; right: 12px; color: #fff; text-decoration: none; font-size: 28px; line-height: 1; opacity: 0.8; }
+.modal-close:hover { opacity: 1; }
+.video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
+.video-wrapper iframe,
+.video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* Modal action button */
+.modal-actions { margin-top: 12px; text-align: right; }
+.btn-close-modal { display: inline-block; padding: 10px 16px; border: 1px solid #007df7; color: #fff; text-decoration: none; border-radius: 6px; cursor: pointer; font-family: 'Orbitron', monospace; font-size: 0.9rem; }
+.btn-close-modal:hover { background: rgba(0,125,247,0.15); }
+
+@media (max-width: 600px) {
+    .modal-dialog { margin: 32px auto; }
+}
+</style>
+
+<style>
+/* Contact Panitia tidy styles (index only) */
+.contact-wrapper { max-width: 800px; margin: 0 auto; text-align: center; }
+.contact-intro { margin-bottom: 32px; font-size: 1.1rem; color: #ddd; }
+.cp-grid { display: grid; gap: 20px; grid-template-columns: 1fr 1fr; align-items: stretch; }
+.cp-card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 16px; border: 1px solid rgba(0,125,247,0.2); transition: transform .2s ease, box-shadow .2s ease; text-align: left; }
+.cp-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.3); }
+.cp-card .info-icon { font-size: 1.8rem; line-height: 1; width: 42px; height: 42px; display: grid; place-items: center; background: linear-gradient(45deg, #007df7, #00B2FF); color: #fff; border-radius: 50%; }
+.cp-card .info-details h4 { margin: 0; font-size: 1.1rem; }
+.cp-card .info-details p { margin: 6px 0 0; color: #bbb; }
+.contact-note { margin-top: 20px; font-size: 0.9rem; color: #aaa; font-weight: 700; }
+@media (max-width: 700px) { .cp-grid { grid-template-columns: 1fr; } }
 </style>
 
 
 <!-- Contact Section -->
 <section class="contact" id="contact">
     <h2 class="section-title">Kontak Panitia</h2>
-    <div class="contact-container" style="max-width: 800px; margin: 0 auto; text-align: center;">
-        
-        <p style="margin-bottom: 40px; font-size: 1.1rem; color: #ddd;">
+    <div class="contact-container contact-wrapper">
+        <p class="contact-intro">
             Jika ada pertanyaan terkait kegiatan 
             <strong>MATAF FST UNISA Yogyakarta 2025</strong>, 
             peserta dapat langsung menghubungi contact person berikut:
         </p>
 
-        <div class="contact-info" style="display: grid; gap: 20px;">
-            
-            <div class="info-item" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; display: flex; align-items: center; justify-content: flex-start; gap: 15px;">
-                <div class="info-icon" style="font-size: 1.8rem;">📱</div>
-                <div class="info-details" style="text-align: left;">
-                    <h4 style="margin: 0; font-size: 1.2rem;">Contact Person 1</h4>
-                    <p style="margin: 5px 0 0;">(NOMERE) (WhatsApp)</p>
+        <div class="contact-info cp-grid">
+            <div class="info-item cp-card">
+                <div class="info-icon">📱</div>
+                <div class="info-details">
+                    <h4>Contact Person 1</h4>
+                    <p>(NOMERE) (WhatsApp)</p>
                 </div>
             </div>
 
-            <div class="info-item" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; display: flex; align-items: center; justify-content: flex-start; gap: 15px;">
-                <div class="info-icon" style="font-size: 1.8rem;">📱</div>
-                <div class="info-details" style="text-align: left;">
-                    <h4 style="margin: 0; font-size: 1.2rem;">Contact Person 2</h4>
-                    <p style="margin: 5px 0 0;">(NOMERE) (WhatsApp)</p>
+            <div class="info-item cp-card">
+                <div class="info-icon">📱</div>
+                <div class="info-details">
+                    <h4>Contact Person 2</h4>
+                    <p>(NOMERE) (WhatsApp)</p>
                 </div>
             </div>
-
         </div>
 
-        <p style="margin-top: 30px; font-size: 0.9rem; color: #aaa;">
-            *Silakan hubungi hanya pada jam aktif panitia.
-        </p>
+        <p class="contact-note">*Silakan hubungi hanya pada jam aktif panitia.</p>
     </div>
 </section>
 
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#careers">Careers</a>
-            </div>
-            <p class="copyright">© 2025 ELECTRIC XTRA. All rights reserved. Building tomorrow, today. | Design: <a href="https://templatemo.com" target="_blank" rel="nofollow noopener">TemplateMo</a></p>
-        </div>
-    </footer>
+<footer>
+    <div class="footer-content">
+        <p class="copyright">
+            © 2025 MATAF FST - UNISA Yogyakarta. All rights reserved.
+        </p>
+    </div>
+</footer>
+<!-- Hidden form to satisfy global JS submit handler on pages without a visible contact form -->
+<form id="contactForm" style="display:none"></form>
 <script src="templatemo-electric-scripts.js"></script>
 </body>
 </html>

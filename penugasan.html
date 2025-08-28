@@ -6,6 +6,8 @@
     <title>Penugasan - MATAF FST 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="templatemo-electric-xtra.css" rel="stylesheet">
+    <link rel="icon" href="images/logomataf.svg" type="image/svg+xml" sizes="any">
+    <link rel="shortcut icon" href="images/logomataf.svg" type="image/svg+xml">
     <style>
         .banner { padding: 120px 0 80px; text-align: center; position: relative; }
         .banner-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -58,16 +60,32 @@
                 <img src="images/logomataf.svg" alt="Logo MATAF FST 2025" class="logo-svg">
                 <span class="logo-text">MATAF FST 2025</span>
             </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="informasi.html">Informasi</a></li>
-                <li><a href="penugasan.html" class="active">Penugasan</a></li>
+            <ul class="nav-links" id="navLinks" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Beranda</a></li>
+                <li role="none"><a href="informasi.html" class="nav-link" role="menuitem">Informasi</a></li>
+                <li role="none"><a href="penugasan.html" class="nav-link active" role="menuitem">Penugasan</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
+
+    <!-- Hero Section (Penugasan) -->
+    <section class="hero" id="hero-penugasan">
+        <div class="hero-content">
+            <div class="text-rotator">
+                <div class="text-set active">
+                    <h1 class="glitch-text" data-text="Penugasan MATAF 2025">Penugasan MATAF 2025</h1>
+                    <p class="subtitle">Semua yang kamu butuhkan, di sini</p>
+                </div>
+            </div>
+        </div>
+        <div class="cta-container">
+            <a href="#penugasan" class="cta-button cta-primary">Tugas Mataf</a>
+            
+        </div>
+    </section>
 
     <!-- Penugasan Section with Tabs -->
     <section class="features" id="penugasan">
@@ -76,7 +94,7 @@
 
             <!-- Tabs -->
             <div class="feature-tabs">
-                <div class="tab-item active" data-tab="banner">📢 Banner</div>
+                <div class="tab-item active" data-tab="banner">📢 Pengantar</div>
                 <div class="tab-item" data-tab="tugas">✍️ Tugas</div>
                 <div class="tab-item" data-tab="kelompok">👥 Kelompok</div>
             </div>
@@ -86,7 +104,7 @@
 
                 <!-- Banner -->
                 <div class="content-panel active" id="banner">
-                    <h3>Banner Penugasan</h3>
+                    <h3>Pengantar Penugasan</h3>
                     <p>Selamat datang di halaman penugasan resmi MATAF FST UNISA Yogyakarta 2025.
                        Silakan ikuti setiap instruksi yang telah ditentukan oleh panitia.</p>
                     <img src="https://via.placeholder.com/800x300.png?text=Banner+Penugasan+MATAF+2025" 
@@ -130,6 +148,16 @@ with The Next Generation of FST UNISA.
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p class="copyright">
+            © 2025 MATAF FST - UNISA Yogyakarta. All rights reserved.
+        </p>
+    </div>
+</footer>
+
 
     <!-- Script -->
     <script src="templatemo-electric-scripts.js"></script>
