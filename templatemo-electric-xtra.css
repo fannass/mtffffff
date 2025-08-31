@@ -22,6 +22,8 @@ https://templatemo.com/tm-596-electric-xtra
             text-size-adjust: 100%;
         }
 
+    /* ...existing code... */
+
         body {
             font-family: 'Rajdhani', sans-serif;
             background: #0a0a0a;
@@ -722,6 +724,30 @@ https://templatemo.com/tm-596-electric-xtra
             font-size: 1.1rem;
         }
 
+        /* Badges for status indicators (Informasi page) */
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 999px;
+            margin-left: 10px;
+            vertical-align: middle;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .badge.in-progress {
+            color: #ffffff;
+            background: linear-gradient(90deg, #007df7, #00B2FF);
+            box-shadow: 0 4px 18px rgba(0, 125, 247, 0.25), inset 0 -2px 6px rgba(0,0,0,0.12);
+        }
+
+        /* Adjust badge size on small screens */
+        @media (max-width: 600px) {
+            .badge { font-size: 0.65rem; padding: 3px 6px; margin-left: 8px; }
+            .section-title { font-size: 1.8rem; }
+        }
+
         /* Preformatted blocks: wrap long content on mobile to avoid clipping */
         .content-panel pre {
             white-space: pre-wrap; /* preserve newlines, allow wrapping */
@@ -796,13 +822,52 @@ https://templatemo.com/tm-596-electric-xtra
             animation: float 6s ease-in-out infinite;
         }
 
+                /* Logo inside About visual */
+                .about-graphic { display: flex; align-items: center; justify-content: center; }
+                    .about-logo {
+                    width: clamp(140px, 22vw, 280px);
+                    height: auto;
+                    display: block;
+                    filter: drop-shadow(0 12px 30px rgba(9,181,164,0.18));
+                    transition: transform 0.5s ease, filter 0.4s ease;
+                    animation: logoFloat 6s ease-in-out infinite;
+                }
+
+                @keyframes logoFloat {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-12px); }
+                }
+
+                .about-logo:hover {
+                    transform: translateY(-6px) scale(1.02);
+                    filter: drop-shadow(0 18px 48px rgba(9,181,164,0.28));
+                }
+
+                /* gentle halo behind the logo to improve contrast */
+                .about-graphic::before {
+                    content: '';
+                    position: absolute;
+                    width: 160%; height: 160%;
+                    background: radial-gradient(circle at 50% 40%, rgba(9,181,164,0.12), transparent 40%);
+                    z-index: 0;
+                    border-radius: 50%;
+                    pointer-events: none;
+                }
+
+                .about-logo { position: relative; z-index: 1; }
+
+                /* Respect user's motion preferences */
+                @media (prefers-reduced-motion: reduce) {
+                    .about-logo, .about-graphic { animation: none !important; transition: none !important; }
+                }
+
         .about-graphic::before,
         .about-graphic::after {
             content: '';
             position: absolute;
             border: 2px solid #007df7;
             border-radius: 10px;
-            box-shadow: 0 0 30px rgba(255, 94, 0, 0.5);
+            box-shadow: 0 0 30px rgba(9,181,164,0.5);
         }
 
         .about-graphic::before {
