@@ -15,6 +15,10 @@ TemplateMo 596 Electric Xtra
 https://templatemo.com/tm-596-electric-xtra
 
 -->
+    <style>
+        /* Keep contact form hidden via stylesheet instead of inline attribute */
+        #contactForm { display: none; }
+    </style>
 </head>
 <body>
     <!-- Animated Grid Background -->
@@ -96,8 +100,7 @@ https://templatemo.com/tm-596-electric-xtra
             </p>
             <p>
                 Kegiatan ini memberikan pemahaman, pembekalan, serta pengalaman awal bagi mahasiswa baru 
-                agar mampu beradaptasi dengan lingkungan akademik dan budaya Fakultas, serta siap 
-                menghadapi tantangan era digital.
+                agar mampu beradaptasi dengan lingkungan akademik dan budaya Fakultas.
             </p>
             <p>
                 <strong>Tema MATAF FST 2025:</strong><br>
@@ -122,8 +125,8 @@ https://templatemo.com/tm-596-electric-xtra
     <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Video Trailer MATAF">
         <label for="trailer-toggle" class="modal-close" aria-label="Tutup">×</label>
         <div class="modal-body">
-            <div class="video-wrapper">
-                <video controls playsinline preload="metadata">
+                <div class="video-wrapper">
+                <video id="trailer-video" controls playsinline preload="metadata">
                     <source src="video/trailer.mp4" type="video/mp4">
                     Browser Anda tidak mendukung pemutar video HTML5.
                 </video>
@@ -147,16 +150,16 @@ https://templatemo.com/tm-596-electric-xtra
         <!-- Item 1 -->
         <div class="timeline-item left">
             <div class="timeline-content">
-                <span class="time"> Sep 2025</span>
+                <span class="time"> 12 Sep 2025</span>
                 <h3>Pra MATAF</h3>
-                <p>Kegiatan pembukaan awal dan persiapan peserta.</p>
+                <p>Kegiatan Pra Mataf.</p>
             </div>
         </div>
 
         <!-- Item 2 -->
         <div class="timeline-item right">
             <div class="timeline-content">
-                <span class="time"> Sep 2025</span>
+                <span class="time"> 17 Sep 2025</span>
                 <h3>MATAF FST</h3>
                 <p>Acara utama Masa Ta’aruf Fakultas Sains & Teknologi UNISA Yogyakarta.</p>
             </div>
@@ -332,20 +335,20 @@ footer { width: 100%; margin: 0; }
             peserta dapat langsung menghubungi contact person berikut:
         </p>
 
-        <div class="contact-info cp-grid">
-            <div class="info-item cp-card">
-                <div class="info-icon">📱</div>
-                <div class="info-details">
-                    <h4>Contact Person 1</h4>
-                    <p>(NOMERE) (WhatsApp)</p>
-                </div>
+        <div class="contact-info cp-grid" style="grid-template-columns: 1fr; max-width: 600px; gap: 24px;">
+            <div class="info-item cp-card" style="padding: 24px; justify-content: flex-start;">
+            <div class="info-icon">📱</div>
+            <div class="info-details">
+                <h4>Contact Person 1</h4>
+                <p>Alivia<br><strong>(+62 852-6453-0157)</strong></p>
+            </div>
             </div>
 
-            <div class="info-item cp-card">
+            <div class="info-item cp-card" style="padding: 24px; justify-content: flex-start;">
                 <div class="info-icon">📱</div>
                 <div class="info-details">
                     <h4>Contact Person 2</h4>
-                    <p>(NOMERE) (WhatsApp)</p>
+                    <p>Yunan<br><strong>(+62 852-6453-0157)</strong></p>
                 </div>
             </div>
         </div>
@@ -364,7 +367,25 @@ footer { width: 100%; margin: 0; }
     </div>
 </footer>
 <!-- Hidden form to satisfy global JS submit handler on pages without a visible contact form -->
-<form id="contactForm" style="display:none"></form>
+<form id="contactForm"></form>
 <script src="templatemo-electric-scripts.js"></script>
+<script>
+    (function(){
+        var trailerToggle = document.getElementById('trailer-toggle');
+        var video = document.getElementById('trailer-video');
+        if(!trailerToggle || !video) return;
+        // When the checkbox changes to unchecked (modal closed), pause and reset video
+        trailerToggle.addEventListener('change', function(){
+            if(!trailerToggle.checked){
+                try{ video.pause(); video.currentTime = 0; }catch(e){}
+            }
+        });
+        // Also pause when clicking modal close buttons (labels pointing to the checkbox)
+        var closeLabels = document.querySelectorAll('label[for="trailer-toggle"]');
+        if(closeLabels && closeLabels.length){
+            closeLabels.forEach(function(lbl){ lbl.addEventListener('click', function(){ try{ video.pause(); video.currentTime = 0; }catch(e){} }); });
+        }
+    })();
+</script>
 </body>
 </html>

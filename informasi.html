@@ -61,37 +61,170 @@
         <div class="features-container">
 
             <!-- Tabs -->
-            <div class="feature-tabs">
-                <div class="tab-item active" data-tab="pramataf">Pra MATAF</div>
+                <div class="feature-tabs">
+                <div class="tab-item active" data-tab="pengantar">Pengantar</div>
+                <div class="tab-item" data-tab="perlengkapan">Perlengkapan Wajib</div>
                 <div class="tab-item" data-tab="dresscode">Dresscode</div>
                 <div class="tab-item" data-tab="atribut">Atribut</div>
+                <div class="tab-item" data-tab="logo">Kebutuhan Logo</div>
                 <div class="tab-item" data-tab="tambahan">Tambahan</div>
             </div>
 
             <!-- Content Panels -->
             <div class="feature-content">
 
-                <!-- Pra MATAF -->
-                <div class="content-panel active" id="pramataf">
-                    <h3>Pra MATAF</h3>
-                    <p>Kegiatan Pra MATAF adalah pengenalan awal sebelum kegiatan utama berlangsung. 
-                       Informasi detail akan diumumkan oleh panitia. 
-                       Banner atau gambar latar bisa ditampilkan sebagai identitas acara.</p>
-                    <img src="https://via.placeholder.com/900x400.png?text=Pra+MATAF+Banner" 
-                         alt="Pra MATAF Banner" class="info-image">
+                <!-- Pengantar (mengganti Pra MATAF) dan Perlengkapan Wajib -->
+                <div class="content-panel active" id="pengantar">
+                    <h3>Pengantar</h3>
+                    <p>Selamat datang di halaman informasi MATAF FST UNISA Yogyakarta 2025. Halaman ini berisi petunjuk, dan informasi penting yang perlu diperhatikan oleh peserta.</p>
+                    <p>Silakan baca seluruh halaman untuk mengetahui dresscode, atribut, serta informasi tambahan lainnya.</p>
+
+                    <!-- Perlengkapan Wajib dipindah ke panel tersendiri -->
+                </div>
+
+                <!-- Perlengkapan Wajib panel (posisi: setelah Pengantar) -->
+                <div class="content-panel" id="perlengkapan">
+                    <h3>Perlengkapan Wajib</h3>
+                    <p>Berikut adalah daftar perlengkapan wajib yang harus dibawa peserta saat mengikuti kegiatan MATAF:</p>
+                    <ul class="feature-list">
+                        <li>Tumbler & Kotak makan Berisi Sarapan.</li>
+                        <li>Jas Hujan(merk bebas).</li>
+                        <li>Sandal Jepit Untuk Sholat.</li>
+                        <li>Obat Pribadi.</li>
+                        <li>Peralatan Ibadah.</li>
+                        <li>Alat Tulis.</li>
+                        <li>Cat AKrilik 2 warna & Kuas Kecil.</li>
+                    </ul>
+                    <p>Perlengkapan tambahan akan diinformasikan oleh panitia bila diperlukan.</p>
                 </div>
 
                 <!-- Dresscode -->
                 <div class="content-panel" id="dresscode">
-                    <h3>Dresscode <span class="badge in-progress" aria-hidden="true">Dalam Proses</span></h3>
-                    <p>Panduan berpakaian sedang disusun — pantau pembaruan.</p>
+                    <h3>Dresscode</h3>
+                    <div class="dresscode-grid">
+                        <figure>
+                            <img src="images/dclaki.png" alt="Dresscode Laki-laki" style="max-width:220px;display:block;margin-bottom:8px;">
+                            <figcaption>Laki-laki</figcaption>
+                        </figure>
+                        <div>
+                            <ol class="feature-list">
+                                <li>Mengenakan kemeja putih lengan panjang, sopan, rapi dan tidak ketat.</li>
+                                <li>Mengenakan celana panjang bahan berwarna hitam, sopan, rapi, dan tidak ketat.</li>
+                                <li>Mengenakan jarik atau jarik sembong berwarna coklat.</li>
+                                <li>Mengenakan sepatu pantofel hitam.</li>
+                                <li>Mengenakan kaos kaki putih, wajib menutup mata kaki.</li>
+                                <li>Tidak diperkenankan menggunakan aksesoris, selain jam tangan.</li>
+                                <li>Rambut wajib rapi, tidak gondrong dan tidak berwarna.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="dresscode-grid" style="margin-top:14px;">
+                        <figure>
+                            <img src="images/dcperempuan.png" alt="Dresscode Perempuan Muslim" style="max-width:220px;display:block;margin-bottom:8px;">
+                            <figcaption>Perempuan (Muslim)</figcaption>
+                        </figure>
+                        <div>
+                            <ol class="feature-list">
+                                <li>Mengenakan kemeja putih / baju kurung putih (boleh mengenakan baju kurung yang digunakan Mataf Universitas) sopan, rapi dan tidak ketat.</li>
+                                <li>Mengenakan celana panjang hitam, sopan, rapi dan tidak ketat.</li>
+                                <li>Mengenakan hijab berwarna cream / coksu dan sejenisnya (yang sudah kalian beli untuk Mataf Universitas).</li>
+                                <li>Mengenakan ciput (dalaman jilbab) berwarna hitam.</li>
+                                <li>Mengenakan rok lilit / jarik berwarna coklat.</li>
+                                <li>Mengenakan sepatu pantofel hitam, tidak berhak.</li>
+                                <li>Mengenakan kaos kaki putih, wajib menutup mata kaki.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="dresscode-grid" style="margin-top:14px;">
+                        <figure>
+                            <img src="images/dcnon.png" alt="Dresscode Perempuan Non-Muslim" style="max-width:220px;display:block;margin-bottom:8px;">
+                            <figcaption>Perempuan Non-Muslim</figcaption>
+                        </figure>
+                        <div>
+                            <ol class="feature-list">
+                                <li>Mengenakan kemeja putih / baju kurung (boleh menggunakan baju kurung yang digunakan untuk Mataf Universitas) sopan, rapi dan tidak ketat.</li>
+                                <li>Mengenakan celana panjang hitam, sopan, rapi dan tidak ketat.</li>
+                                <li>Mengenakan rok lilit / jarik berwarna coklat.</li>
+                                <li>Mengenakan Sepatu pantofel hitam, tidak berhak.</li>
+                                <li>Mengenakan kaos kaki putih, wajib menutup mata kaki.</li>
+                                <li>Tidak diperkenankan mengenakan aksesoris, selain jam tangan.</li>
+                                <li>Rambut diikat seperti ketentuan MATAF Universitas.</li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Atribut -->
                 <div class="content-panel" id="atribut">
-                    <h3>Atribut MATAF <span class="badge in-progress" aria-hidden="true">Dalam Proses</span></h3>
-                    <p>Rincian atribut sedang disiapkan — akan diumumkan.</p>
+                    <h3>Atribut MATAF</h3>
+                    <ol class="feature-list">
+                        <li>Co-Card dicetak dengan ukuran B3 kemudian dilaminating.</li>
+                        <li>Tali co-card yang digunakan yaitu warna biru.</li>
+                        <li>Informasi di Co-Card terdiri dari nama panggilan dan PRODI.</li>
+                    </ol>
+
+                    <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;align-items:flex-start;">
+                        <figure style="flex:1 1 140px;text-align:center;margin:0;">
+                            <img src="images/ti.png" alt="TI" style="max-width:160px;display:block;margin:0 auto 8px;">
+                            <figcaption>Teknologi Informasi</figcaption>
+                        </figure>
+                        <figure style="flex:1 1 140px;text-align:center;margin:0;">
+                            <img src="images/bio.png" alt="BIO" style="max-width:160px;display:block;margin:0 auto 8px;">
+                            <figcaption>Bioteknologi</figcaption>
+                        </figure>
+                        <figure style="flex:1 1 140px;text-align:center;margin:0;">
+                            <img src="images/arsi.png" alt="ARSI" style="max-width:160px;display:block;margin:0 auto 8px;">
+                            <figcaption>Arsitektur</figcaption>
+                        </figure>
+                    </div>
+
+                    <div style="margin-top:14px;">
+                        <a class="cta-button cta-primary" href="https://drive.google.com/drive/folders/15gsCVO5UfTb3yH177Vea-OeblJN7iotx?usp=sharing" target="_blank" rel="noopener">Link Download</a>
+                    </div>
                 </div>
+
+                <!-- Kebutuhan Logo -->
+                <div class="content-panel" id="logo">
+                    <h3>Kebutuhan Logo</h3>
+                    <p>Semua logo yang diperlukan tersedia di bawah ini. Klik 'Link Download' untuk mengunduh .</p>
+                    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;">
+                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
+                            <img src="images/logo/FST.png" alt="FST" style="max-width:140px;display:block;margin:0 auto 8px;">
+                            <figcaption>FST</figcaption>
+                        </figure>
+                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
+                            <img src="images/logo/IMM.jpg" alt="IMM" style="max-width:140px;display:block;margin:0 auto 8px;">
+                            <figcaption>IMM</figcaption>
+                        </figure>
+                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
+                            <img src="images/logo/LOGO_BEM_FST_unisa(1).png" alt="BEM FST" style="max-width:140px;display:block;margin:0 auto 8px;">
+                            <figcaption>BEM FST</figcaption>
+                        </figure>
+                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
+                            <img src="images/logo/logo_mataf fst_2025-01.png" alt="Logo MATAF" style="max-width:140px;display:block;margin:0 auto 8px;">
+                            <figcaption>Logo MATAF</figcaption>
+                        </figure>
+                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
+                            <img src="images/logo/MASTER.png" alt="MASTER" style="max-width:140px;display:block;margin:0 auto 8px;">
+                            
+                        </figure>
+                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
+                            <img src="images/logo/Unisa(2).png" alt="Unisa (varian)" style="max-width:140px;display:block;margin:0 auto 8px;">
+                            <figcaption>Unisa </figcaption>
+                        </figure>
+                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
+                            <img src="images/logo/Unisa.png" alt="Unisa" style="max-width:140px;display:block;margin:0 auto 8px;">
+                            <figcaption>Unisa</figcaption>
+                        </figure>
+                    </div>
+                    <div style="margin-top:12px;">
+                        <a class="cta-button cta-primary" href="https://drive.google.com/drive/folders/1gqTAS-vXMOZ-jdIyxYK6292v-j8HVJ90?usp=sharing" target="_blank" rel="noopener">Link Download</a>
+                    </div>
+                </div>
+
+                <!-- Perlengkapan now included inside Pengantar -->
 
                 <!-- Tambahan -->
                 <div class="content-panel" id="tambahan">

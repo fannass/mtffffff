@@ -398,14 +398,18 @@ https://templatemo.com/tm-596-electric-xtra
         .glitch-text {
             font-family: 'Orbitron', monospace;
             font-size: clamp(0.98rem, 2.94vw, 2.4rem);
-            font-weight: 900;
-            position: relative;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-shadow: 0 0 20px rgba(255, 94, 0, 0.5);
-            overflow: hidden;
-            margin: 0 0 8px; /* ensure space before subtitle */
+
         }
+
+        /* Logo thumbnails in informasi -> Kebutuhan Logo panel */
+        #logo img {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 8px;
+        }
+        
 
         .char {
             display: inline-block;
