@@ -1,38 +1,32 @@
 // JavaScript Document
-
 /*
+ * MATAF FST 2026 - Interactive & Animation Scripts
+ */
 
-TemplateMo 596 Electric Xtra
-
-https://templatemo.com/tm-596-electric-xtra
-
-*/
-
-// Create floating particles
 document.addEventListener('DOMContentLoaded', function(){
+    // Create rich glowing cyber particles matching IG aesthetic
     function createParticles() {
         const particlesContainer = document.getElementById('particles');
-        if (!particlesContainer) return; // nothing to do on pages without particles
+        if (!particlesContainer) return;
 
-        const particleCount = 30;
+        const particleCount = 45;
+        const colors = ['#ff2a9d', '#00f0ff', '#a855f7', '#ffffff', '#ff6fd8', '#70f7ff'];
+
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 15 + 's';
-            particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            particle.style.animationDelay = (Math.random() * 14) + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 12) + 's';
 
-            // Random color tweak
-            if (Math.random() > 0.5) {
-                particle.style.setProperty('--particle-color', '#00B2FF');
-                particle.style.background = '#00B2FF';
-            }
+            const chosenColor = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.setProperty('--particle-color', chosenColor);
 
             particlesContainer.appendChild(particle);
         }
     }
 
-    // Mobile menu toggle (guarded)
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     if (menuToggle && navLinks) {
@@ -41,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function(){
             navLinks.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking a link (only if links exist)
+        // Close mobile menu when clicking a link
         const mobileLinks = document.querySelectorAll('.nav-links a');
         if (mobileLinks.length) {
             mobileLinks.forEach(link => {
@@ -58,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const navItems = document.querySelectorAll('.nav-link');
 
     function updateActiveNav() {
-        const scrollPosition = window.pageYOffset + 100;
+        const scrollPosition = window.pageYOffset + 120;
         if (!sections || sections.length === 0) return;
 
         sections.forEach((section) => {
@@ -73,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
-    // Navbar scroll effect (guarded)
+    // Navbar scroll effect
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
         if (navbar) {
@@ -83,23 +77,24 @@ document.addEventListener('DOMContentLoaded', function(){
                 navbar.classList.remove('scrolled');
             }
         }
-        // Always try to update nav if sections exist
         if (sections && sections.length) updateActiveNav();
     });
 
-    // Initial active nav update (guarded)
     if (sections && sections.length) updateActiveNav();
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
         });
     });
@@ -111,11 +106,9 @@ document.addEventListener('DOMContentLoaded', function(){
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 const tabId = tab.getAttribute('data-tab');
-                // Remove active class from all tabs and panels
                 tabs.forEach(t => t.classList.remove('active'));
                 panels.forEach(p => p.classList.remove('active'));
 
-                // Add active class to clicked tab and corresponding panel (guarded)
                 tab.classList.add('active');
                 const targetPanel = document.getElementById(tabId);
                 if (targetPanel) targetPanel.classList.add('active');
@@ -123,13 +116,12 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
-    // Form submission (guarded)
+    // Form submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            // Add your form submission logic here
-            alert("Message sent! We'll get back to you soon.");
+            alert("Pesan terkirim! Panitia akan segera menghubungi Anda.");
             this.reset();
         });
     }
@@ -137,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // Initialize particles
     createParticles();
 
-    // Text rotation with character animation (guarded)
+    // Text rotation with character animation
     const textSets = document.querySelectorAll('.text-set');
     if (textSets && textSets.length) {
         let currentIndex = 0;
@@ -147,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
             if (!element) return;
             const text = element.textContent || '';
             element.innerHTML = text.split('').map((char, i) =>
-                `<span class="char" style="animation-delay: ${i * 0.05}s">${char === ' ' ? '&nbsp;' : char}</span>`
+                `<span class="char" style="animation-delay: ${i * 0.04}s">${char === ' ' ? '&nbsp;' : char}</span>`
             ).join('');
         }
 
@@ -155,38 +147,36 @@ document.addEventListener('DOMContentLoaded', function(){
             if (!textSet) return;
             const glitchText = textSet.querySelector('.glitch-text');
             const subtitle = textSet.querySelector('.subtitle');
-            // Wrap text in spans for animation
+            
             wrapTextInSpans(glitchText);
             if (glitchText) glitchText.setAttribute('data-text', glitchText.textContent || '');
-            // Show subtitle after main text
-            if (subtitle) setTimeout(() => subtitle.classList.add('visible'), 800);
+            
+            if (subtitle) setTimeout(() => subtitle.classList.add('visible'), 700);
         }
 
         function animateTextOut(textSet) {
             if (!textSet) return;
             const chars = textSet.querySelectorAll('.char');
             const subtitle = textSet.querySelector('.subtitle');
-            // Animate characters out
+            
             chars.forEach((char, i) => {
                 char.style.animationDelay = `${i * 0.02}s`;
                 char.classList.add('out');
             });
-            // Hide subtitle
+            
             if (subtitle) subtitle.classList.remove('visible');
         }
 
         function rotateText() {
-            if (isAnimating) return;
+            if (isAnimating || textSets.length <= 1) return;
             isAnimating = true;
 
             const currentSet = textSets[currentIndex];
             const nextIndex = (currentIndex + 1) % textSets.length;
             const nextSet = textSets[nextIndex];
 
-            // Animate out current text
             animateTextOut(currentSet);
 
-            // After out animation, switch sets
             setTimeout(() => {
                 if (currentSet) currentSet.classList.remove('active');
                 if (nextSet) nextSet.classList.add('active');
@@ -203,23 +193,24 @@ document.addEventListener('DOMContentLoaded', function(){
             animateTextIn(textSets[0]);
         }
 
-        // Start rotation after initial display
-        setTimeout(() => {
-            setInterval(rotateText, 5000); // Change every 5 seconds
-        }, 4000);
+        // Start rotation after initial display only if multiple sets exist
+        if (textSets.length > 1) {
+            setTimeout(() => {
+                setInterval(rotateText, 5000);
+            }, 4000);
+        }
 
-        // Add random glitch effect
+        // Subtle random glitch twitch
         setInterval(() => {
             const glitchTexts = document.querySelectorAll('.glitch-text');
             glitchTexts.forEach(text => {
-                if (Math.random() > 0.95) {
+                if (Math.random() > 0.9) {
                     text.style.animation = 'none';
                     setTimeout(() => {
                         text.style.animation = '';
-                    }, 200);
+                    }, 180);
                 }
             });
         }, 3000);
     }
-    // end DOMContentLoaded
 });

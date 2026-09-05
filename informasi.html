@@ -1,257 +1,434 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informasi - MATAF FST 2025</title>
+    <title>Informasi - MATAF FST 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="templatemo-electric-xtra.css" rel="stylesheet">
     <link rel="icon" href="images/logomataf.svg" type="image/svg+xml" sizes="any">
     <link rel="shortcut icon" href="images/logomataf.svg" type="image/svg+xml">
 </head>
 <body>
-    <!-- Animated Background -->
+    <!-- Animated Cyber Background -->
     <div class="grid-bg"></div>
     <div class="gradient-overlay"></div>
+    <div class="liquid-glow-left"></div>
+    <div class="liquid-glow-right"></div>
     <div class="scanlines"></div>
+
+    <!-- Animated Geometric Rotating Shapes -->
     <div class="shapes-container">
-        <div class="shape shape-circle"></div>
-        <div class="shape shape-triangle"></div>
+        <!-- 1. KOTAK (Cyber Square / 3D Rotating Cube) -->
         <div class="shape shape-square"></div>
+        <div class="shape shape-square-small"></div>
+
+        <!-- 2. SEGITIGA (Holographic Neon Triangles) -->
+        <div class="shape shape-triangle"></div>
+        <div class="shape shape-triangle-small"></div>
+
+        <!-- 3. BUNDAR (Concentric Rings & Orbs) -->
+        <div class="shape shape-circle"></div>
+        <div class="shape shape-circle-small"></div>
+
+        <!-- 4. SPARKLES & IG FEED ACCENTS -->
+        <div class="shape shape-sparkle sparkle-1">
+            <svg viewBox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+        </div>
+        <div class="shape shape-sparkle sparkle-2">
+            <svg viewBox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+        </div>
+        <div class="shape shape-sparkle sparkle-3">
+            <svg viewBox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+        </div>
+        <div class="shape shape-sparkle sparkle-4">
+            <svg viewBox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+        </div>
+
+        <!-- 3D Floating Tech Badges -->
+        <div class="shape shape-floating-badge badge-pos-1">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L4 5V11C4 16.5 7.5 21.3 12 22.5C16.5 21.3 20 16.5 20 11V5L12 2Z" fill="url(#shieldGradInf)" stroke="#00f0ff" stroke-width="1.5"/>
+                <path d="M12 6L7 8.5V11.5C7 15 9.2 18.2 12 19.2C14.8 18.2 17 15 17 11.5V8.5L12 6Z" fill="#ff2a9d" opacity="0.6"/>
+                <circle cx="12" cy="12" r="2" fill="#ffffff"/>
+                <defs>
+                    <linearGradient id="shieldGradInf" x1="4" y1="2" x2="20" y2="22.5" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#00f0ff"/>
+                        <stop offset="1" stop-color="#9333ea"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>SAFE DIGITAL</span>
+        </div>
+        <div class="shape shape-floating-badge badge-pos-2">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="12,2 21,7 12,12 3,7" fill="#00f0ff" opacity="0.9"/>
+                <polygon points="3,7 12,12 12,22 3,17" fill="#ff2a9d" opacity="0.8"/>
+                <polygon points="12,12 21,7 21,17 12,22" fill="#9333ea" opacity="0.95"/>
+                <path d="M12 2L21 7M12 2L3 7M12 2V12M12 12L21 7M12 12L3 7M12 12V22" stroke="#ffffff" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            <span>IMPACTFUL SPACE</span>
+        </div>
+        <div class="shape shape-floating-badge badge-pos-3">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(30 12 12)" stroke="#00f0ff" stroke-width="1.5"/>
+                <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(-30 12 12)" stroke="#ff2a9d" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="3" fill="url(#coreGradInf)"/>
+                <defs>
+                    <linearGradient id="coreGradInf" x1="9" y1="9" x2="15" y2="15" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#ffffff"/>
+                        <stop offset="1" stop-color="#00f0ff"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>FST UNISA</span>
+        </div>
     </div>
+
+    <!-- Floating Cyber Particles -->
     <div id="particles"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo-link">
-                <img src="images/logomataf.svg" alt="Logo MATAF FST 2025" class="logo-svg">
-                <span class="logo-text">MATAF FST 2025</span>
+                <div class="logo-badge">
+                    <img src="images/logomataf.svg" alt="Logo MATAF FST 2026" class="logo-svg">
+                </div>
+                <span class="logo-text">MATAF FST 2026</span>
             </a>
             <ul class="nav-links" id="navLinks" role="menubar">
                 <li role="none"><a href="index.html" class="nav-link" role="menuitem">Beranda</a></li>
                 <li role="none"><a href="informasi.html" class="nav-link active" role="menuitem">Informasi</a></li>
                 <li role="none"><a href="penugasan.html" class="nav-link" role="menuitem">Penugasan</a></li>
             </ul>
-            <div class="menu-toggle" id="menuToggle">
+            <div class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="text-rotator">
-                <div class="text-set active">
-                    <h1 class="glitch-text">MATAF FST 2025</h1>
-                    <p class="subtitle">Informasi Seputar MATAF  FST UNISA Yogyakarta</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-search-pill" role="button" tabindex="0" title="INFORMASI MATAF 2026">
+                    <span class="search-icon-3d">
+                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.5 19.5L27 27" stroke="#4a1575" stroke-width="5" stroke-linecap="round"/>
+                            <path d="M19 19L26.5 26.5" stroke="#792bb5" stroke-width="4.5" stroke-linecap="round"/>
+                            <path d="M18.5 18.5L24.5 24.5" stroke="#c084fc" stroke-width="1.8" stroke-linecap="round"/>
+                            <circle cx="12.5" cy="12.5" r="9.5" fill="#4a1575"/>
+                            <circle cx="12.5" cy="12.5" r="8.5" fill="#792bb5"/>
+                            <circle cx="12.5" cy="12.5" r="7" fill="url(#lens3dGradInfo)"/>
+                            <ellipse cx="10.5" cy="10" rx="3.5" ry="2" transform="rotate(-30 10.5 10)" fill="white" opacity="0.85"/>
+                            <circle cx="14.5" cy="14.5" r="1.2" fill="white" opacity="0.5"/>
+                            <defs>
+                                <linearGradient id="lens3dGradInfo" x1="6" y1="6" x2="19" y2="19" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#7dd3fc"/>
+                                    <stop offset="0.5" stop-color="#00f0ff"/>
+                                    <stop offset="1" stop-color="#0284c7"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class="search-text-3d">INFORMASI MATAF</span>
+                </div>
+                <div class="text-rotator">
+                    <div class="text-set active">
+                        <h1 class="glitch-text" data-text="INFORMASI MATAF">INFORMASI MATAF</h1>
+                        <p class="subtitle">Panduan Resmi Pelaksanaan MATAF FST UNISA 2026</p>
+                    </div>
+                    <div class="text-set">
+                        <h1 class="glitch-text" data-text="DRESSCODE & ATRIBUT">DRESSCODE & ATRIBUT</h1>
+                        <p class="subtitle">Ketentuan Pakaian, Co-Card, & Kelengkapan Mahasiswa Baru</p>
+                    </div>
+                    <div class="text-set">
+                        <h1 class="glitch-text" data-text="PERLENGKAPAN WAJIB">PERLENGKAPAN WAJIB</h1>
+                        <p class="subtitle">Daftar Peralatan Penting Selama Rangkaian Kegiatan</p>
+                    </div>
+                    <div class="text-set">
+                        <h1 class="glitch-text" data-text="FST BERKARAKTER">FST BERKARAKTER</h1>
+                        <p class="subtitle">Membangun Ruang Digital yang Aman, Cerdas, dan Berdampak</p>
+                    </div>
+                </div>
+                <div class="cta-container">
+                    <a href="#informasi" class="cta-button cta-primary">Buka Informasi</a>
+                    <a href="penugasan.html" class="cta-button cta-secondary">Cek Penugasan</a>
                 </div>
             </div>
-        </div>
-        <div class="cta-container">
-            <a href="#informasi" class="cta-button cta-primary">Informasi Mataf</a>
-            
-        </div>
-    </section>
+        </section>
 
-    <!-- Informasi Section with Tabs -->
-    <section class="features" id="informasi">
-        <h2 class="section-title">Informasi MATAF</h2>
-        <div class="features-container">
+        <!-- Informasi Section with Tabs -->
+        <section class="features" id="informasi">
+            <h2 class="section-title">Panduan Informasi MATAF</h2>
+            <div class="features-container">
 
-            <!-- Tabs -->
+                <!-- Tabs -->
                 <div class="feature-tabs">
-                <div class="tab-item active" data-tab="pengantar">Pengantar</div>
-                <div class="tab-item" data-tab="perlengkapan">Perlengkapan Wajib</div>
-                <div class="tab-item" data-tab="dresscode">Dresscode</div>
-                <div class="tab-item" data-tab="atribut">Atribut</div>
-                <div class="tab-item" data-tab="logo">Kebutuhan Logo</div>
-                <div class="tab-item" data-tab="pengumpulan">Pengumpulan Tugas</div>
-                <div class="tab-item" data-tab="tambahan">Tambahan</div>
-            </div>
-
-            <!-- Content Panels -->
-            <div class="feature-content">
-
-                <!-- Pengantar (mengganti Pra MATAF) dan Perlengkapan Wajib -->
-                <div class="content-panel active" id="pengantar">
-                    <h3>Pengantar</h3>
-                    <p>Selamat datang di halaman informasi MATAF FST UNISA Yogyakarta 2025. Halaman ini berisi petunjuk, dan informasi penting yang perlu diperhatikan oleh peserta.</p>
-                    <p>Silakan baca seluruh halaman untuk mengetahui dresscode, atribut, serta informasi tambahan lainnya.</p>
-
-                    <!-- Perlengkapan Wajib dipindah ke panel tersendiri -->
+                    <div class="tab-item active" data-tab="pengantar">Pengantar</div>
+                    <div class="tab-item" data-tab="perlengkapan">Perlengkapan Wajib</div>
+                    <div class="tab-item" data-tab="dresscode">Dresscode MABA</div>
+                    <div class="tab-item" data-tab="atribut">Co-Card & Atribut</div>
+                    <div class="tab-item" data-tab="logo">Kebutuhan Logo</div>
+                    <div class="tab-item" data-tab="pengumpulan">Pengumpulan Tugas</div>
+                    <div class="tab-item" data-tab="narahubung">Narahubung</div>
                 </div>
 
-                <!-- Perlengkapan Wajib panel (posisi: setelah Pengantar) -->
-                <div class="content-panel" id="perlengkapan">
-                    <h3>Perlengkapan Wajib</h3>
-                    <p>Berikut adalah daftar perlengkapan wajib yang harus dibawa peserta saat mengikuti kegiatan MATAF:</p>
-                    <ul class="feature-list">
-                        <li>Tumbler & Kotak makan Berisi Sarapan.</li>
-                        <li>Jas Hujan(merk bebas).</li>
-                        <li>Sandal Jepit Untuk Sholat.</li>
-                        <li>Obat Pribadi.</li>
-                        <li>Peralatan Ibadah.</li>
-                        <li>Alat Tulis.</li>
-                        <li>Cat AKrilik 2 warna & Kuas Kecil.</li>
-                    </ul>
-                    <p>Perlengkapan tambahan akan diinformasikan oleh panitia bila diperlukan.</p>
-                </div>
+                <!-- Content Panels -->
+                <div class="feature-content">
 
-                <!-- Dresscode -->
-                <div class="content-panel" id="dresscode">
-                    <h3>Dresscode</h3>
-                    <div class="dresscode-grid">
-                        <figure>
-                            <img src="images/dclaki.png" alt="Dresscode Laki-laki" style="max-width:220px;display:block;margin-bottom:8px;">
-                            <figcaption>Laki-laki</figcaption>
-                        </figure>
-                        <div>
-                            <ol class="feature-list">
-                                <li>Mengenakan kemeja putih lengan panjang, sopan, rapi dan tidak ketat.</li>
-                                <li>Mengenakan celana panjang bahan berwarna hitam, sopan, rapi, dan tidak ketat.</li>
-                                <li>Mengenakan jarik atau jarik sembong berwarna coklat.</li>
-                                <li>Mengenakan sepatu pantofel hitam.</li>
-                                <li>Mengenakan kaos kaki putih, wajib menutup mata kaki.</li>
-                                <li>Tidak diperkenankan menggunakan aksesoris, selain jam tangan.</li>
-                                <li>Rambut wajib rapi, tidak gondrong dan tidak berwarna.</li>
-                            </ol>
-                        </div>
-                    </div>
-
-                    <div class="dresscode-grid" style="margin-top:14px;">
-                        <figure>
-                            <img src="images/dcperempuan.png" alt="Dresscode Perempuan Muslim" style="max-width:220px;display:block;margin-bottom:8px;">
-                            <figcaption>Perempuan (Muslim)</figcaption>
-                        </figure>
-                        <div>
-                            <ol class="feature-list">
-                                <li>Mengenakan kemeja putih / baju kurung putih (boleh mengenakan baju kurung yang digunakan Mataf Universitas) sopan, rapi dan tidak ketat.</li>
-                                <li>Mengenakan celana panjang hitam, sopan, rapi dan tidak ketat.</li>
-                                <li>Mengenakan hijab berwarna cream / coksu dan sejenisnya (yang sudah kalian beli untuk Mataf Universitas).</li>
-                                <li>Mengenakan ciput (dalaman jilbab) berwarna hitam.</li>
-                                <li>Mengenakan rok lilit / jarik berwarna coklat.</li>
-                                <li>Mengenakan sepatu pantofel hitam, tidak berhak.</li>
-                                <li>Mengenakan kaos kaki putih, wajib menutup mata kaki.</li>
-                            </ol>
-                        </div>
-                    </div>
-
-                    <div class="dresscode-grid" style="margin-top:14px;">
-                        <figure>
-                            <img src="images/dcnon.png" alt="Dresscode Perempuan Non-Muslim" style="max-width:220px;display:block;margin-bottom:8px;">
-                            <figcaption>Perempuan Non-Muslim</figcaption>
-                        </figure>
-                        <div>
-                            <ol class="feature-list">
-                                <li>Mengenakan kemeja putih / baju kurung (boleh menggunakan baju kurung yang digunakan untuk Mataf Universitas) sopan, rapi dan tidak ketat.</li>
-                                <li>Mengenakan celana panjang hitam, sopan, rapi dan tidak ketat.</li>
-                                <li>Mengenakan rok lilit / jarik berwarna coklat.</li>
-                                <li>Mengenakan Sepatu pantofel hitam, tidak berhak.</li>
-                                <li>Mengenakan kaos kaki putih, wajib menutup mata kaki.</li>
-                                <li>Tidak diperkenankan mengenakan aksesoris, selain jam tangan.</li>
-                                <li>Rambut diikat seperti ketentuan MATAF Universitas.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Atribut -->
-                <div class="content-panel" id="atribut">
-                    <h3>Atribut MATAF</h3>
-                    <ol class="feature-list">
-                        <li>Co-Card dicetak dengan ukuran B3 kemudian dilaminating.</li>
-                        <li>Tali co-card yang digunakan yaitu warna biru.</li>
-                        <li>Informasi di Co-Card terdiri dari nama panggilan dan PRODI.</li>
-                    </ol>
-
-                    <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;align-items:flex-start;">
-                        <figure style="flex:1 1 140px;text-align:center;margin:0;">
-                            <img src="images/ti.png" alt="TI" style="max-width:160px;display:block;margin:0 auto 8px;">
-                            <figcaption>Teknologi Informasi</figcaption>
-                        </figure>
-                        <figure style="flex:1 1 140px;text-align:center;margin:0;">
-                            <img src="images/bio.png" alt="BIO" style="max-width:160px;display:block;margin:0 auto 8px;">
-                            <figcaption>Bioteknologi</figcaption>
-                        </figure>
-                        <figure style="flex:1 1 140px;text-align:center;margin:0;">
-                            <img src="images/arsi.png" alt="ARSI" style="max-width:160px;display:block;margin:0 auto 8px;">
-                            <figcaption>Arsitektur</figcaption>
-                        </figure>
-                    </div>
-
-                    <div style="margin-top:14px;">
-                        <a class="cta-button cta-primary" href="https://drive.google.com/drive/folders/15gsCVO5UfTb3yH177Vea-OeblJN7iotx?usp=sharing" target="_blank" rel="noopener">Link Download</a>
-                    </div>
-                </div>
-
-                <!-- Kebutuhan Logo -->
-                <div class="content-panel" id="logo">
-                    <h3>Kebutuhan Logo</h3>
-                    <p>Semua logo yang diperlukan tersedia di bawah ini. Klik 'Link Download' untuk mengunduh .</p>
-                    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;">
-                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
-                            <img src="images/logo/FST.png" alt="FST" style="max-width:140px;display:block;margin:0 auto 8px;">
-                            <figcaption>FST</figcaption>
-                        </figure>
-                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
-                            <img src="images/logo/IMM.jpg" alt="IMM" style="max-width:140px;display:block;margin:0 auto 8px;">
-                            <figcaption>IMM</figcaption>
-                        </figure>
-                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
-                            <img src="images/logo/LOGO_BEM_FST_unisa(1).png" alt="BEM FST" style="max-width:140px;display:block;margin:0 auto 8px;">
-                            <figcaption>BEM FST</figcaption>
-                        </figure>
-                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
-                            <img src="images/logo/logo_mataf fst_2025-01.png" alt="Logo MATAF" style="max-width:140px;display:block;margin:0 auto 8px;">
-                            <figcaption>Logo MATAF</figcaption>
-                        </figure>
+                    <!-- 1. Pengantar -->
+                    <div class="content-panel active" id="pengantar">
+                        <h3>Pengantar</h3>
+                        <p>Selamat datang di pusat informasi resmi MATAF FST Universitas 'Aisyiyah Yogyakarta 2026.</p>
                         
-                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
-                            <img src="images/logo/Unisa(2).png" alt="Unisa (varian)" style="max-width:140px;display:block;margin:0 auto 8px;">
-                            <figcaption>Unisa </figcaption>
-                        </figure>
-                        <figure style="flex:1 1 160px;text-align:center;margin:0;">
-                            <img src="images/logo/Unisa.png" alt="Unisa" style="max-width:140px;display:block;margin:0 auto 8px;">
-                            <figcaption>Unisa</figcaption>
-                        </figure>
+                        <div style="background: rgba(0, 240, 255, 0.04); border: 1px solid rgba(0, 240, 255, 0.2); border-left: 4px solid var(--accent-cyan); border-radius: 10px; padding: 16px; margin: 18px 0;">
+                            <p style="margin: 0; font-family: 'Orbitron', monospace; font-size: 0.88rem; color: var(--accent-cyan); font-weight: 700;">TEMA RESMI MATAF FST 2026</p>
+                            <p style="margin: 6px 0 0; font-size: 1.15rem; color: #ffffff; font-weight: 600; font-style: italic;">“Empowering Young Intellectuals to Build Safe and Impactful Digital Space”</p>
+                            <p style="margin: 4px 0 0; font-size: 0.95rem; color: #cbb4da;">“Memberdayakan intelektual muda untuk membangun ruang digital yang aman dan berdampak”</p>
+                        </div>
+
+                        <p>Halaman ini memuat seluruh ketentuan resmi mengenai perlengkapan wajib, ketentuan dresscode, co-card, aset master logo, serta link pengumpulan tugas. Silakan pelajari setiap bagian dengan saksama.</p>
                     </div>
-                    <div style="margin-top:12px;">
-                        <a class="cta-button cta-primary" href="https://drive.google.com/drive/folders/1gqTAS-vXMOZ-jdIyxYK6292v-j8HVJ90?usp=sharing" target="_blank" rel="noopener">Link Download</a>
+
+                    <!-- 2. Perlengkapan Wajib -->
+                    <div class="content-panel" id="perlengkapan">
+                        <h3>Perlengkapan yang Harus Dibawa</h3>
+                        <p>Berikut adalah daftar 7 perlengkapan wajib yang harus dipersiapkan dan dibawa oleh seluruh mahasiswa baru selama pelaksanaan MATAF FST 2026:</p>
+                        
+                        <div style="text-align: center; margin: 18px 0;">
+                            <img src="images/2026/perlengkapan.png" alt="Perlengkapan yang Harus Dibawa MATAF FST 2026" style="max-width: 100%; max-height: 260px; object-fit: contain; border-radius: 12px; border: 1px solid var(--border-glass); background: rgba(255, 255, 255, 0.02); padding: 10px;">
+                        </div>
+
+                        <ol class="feature-list" style="padding-left: 0;">
+                            <li>Tumbler dan kotak makan berisi sarapan.</li>
+                            <li>Jas hujan (bebas merek apa saja).</li>
+                            <li>Sandal jepit (untuk keperluan wudhu dan sholat).</li>
+                            <li>Obat-obatan pribadi.</li>
+                            <li>Peralatan ibadah.</li>
+                            <li>Alat tulis (buku catatan dan pena).</li>
+                            <li>Gunting.</li>
+                        </ol>
                     </div>
-                </div>
 
-                <!-- Pengumpulan Tugas (placeholder - link akan diupdate oleh user) -->
-                <div class="content-panel" id="pengumpulan">
-                    <h3>Pengumpulan Tugas</h3>
-                    <p>Di halaman ini akan disediakan link resmi untuk pengumpulan tugas peserta. Link pengumpulan akan ditambahkan setelah panitia menyediakan tautan.</p>
-                    <div style="margin-top:12px;">
-                        <a id="pengumpulan-link" class="cta-button cta-primary" href="#" target="_blank" rel="noopener">Link Pengumpulan (akan diupdate)</a>
+                    <!-- 3. Dresscode -->
+                    <div class="content-panel" id="dresscode">
+                        <h3>Ketentuan Dresscode MABA</h3>
+                        <p>Seluruh mahasiswa baru wajib mengenakan pakaian rapi, sopan, dan sesuai dengan ketentuan resmi sebagai berikut:</p>
+
+                        <!-- Dresscode Laki-laki -->
+                        <div class="dresscode-grid">
+                            <figure class="dresscode-figure">
+                                <img src="images/2026/dc_laki.png" alt="Dresscode Laki-laki MATAF FST 2026" class="dresscode-img">
+                                <figcaption class="dresscode-title" style="color: var(--accent-cyan);">Dress Code Laki-laki</figcaption>
+                            </figure>
+                            <div>
+                                <ol class="feature-list" style="margin-top: 0; padding-left: 0;">
+                                    <li>Mengenakan kemeja biru (<em>baby blue</em>) lengan panjang, sopan, rapi, dan tidak ketat.</li>
+                                    <li>Mengenakan celana panjang bahan berwarna hitam, sopan, rapi, dan tidak ketat.</li>
+                                    <li>Mengenakan kaos dalam berwarna putih.</li>
+                                    <li>Mengenakan sepatu pantofel hitam.</li>
+                                    <li>Mengenakan kaos kaki hitam, wajib menutup mata kaki.</li>
+                                    <li>Tidak diperkenankan menggunakan aksesoris selain jam tangan.</li>
+                                    <li>Rambut wajib rapi, tidak gondrong, dan tidak berwarna.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Dresscode Perempuan (Muslim) -->
+                        <div class="dresscode-grid">
+                            <figure class="dresscode-figure">
+                                <img src="images/2026/dc_perempuan.png" alt="Dresscode Perempuan Muslim MATAF FST 2026" class="dresscode-img">
+                                <figcaption class="dresscode-title" style="color: var(--primary-pink-light);">Dress Code Perempuan (Muslim)</figcaption>
+                            </figure>
+                            <div>
+                                <ol class="feature-list" style="margin-top: 0; padding-left: 0;">
+                                    <li>Mengenakan kemeja biru (<em>baby blue</em>) sopan, rapi, dan tidak ketat.</li>
+                                    <li>Mengenakan celana panjang hitam, sopan, rapi, dan tidak ketat (boleh mengenakan rok formal).</li>
+                                    <li>Mengenakan hijab segi 4 berwarna navy.</li>
+                                    <li>Mengenakan ciput (dalaman jilbab) berwarna hitam.</li>
+                                    <li>Mengenakan inner berwarna putih (tidak ketat).</li>
+                                    <li>Mengenakan sepatu pantofel hitam, tidak berhak (flat).</li>
+                                    <li>Mengenakan kaos kaki hitam, wajib menutup mata kaki.</li>
+                                    <li>Tidak diperkenankan menggunakan aksesoris selain jam tangan.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Dresscode Perempuan (Non-Muslim) -->
+                        <div class="dresscode-grid">
+                            <figure class="dresscode-figure">
+                                <img src="images/2026/dc_nonmuslim.png" alt="Dresscode Perempuan Non-Muslim MATAF FST 2026" class="dresscode-img">
+                                <figcaption class="dresscode-title" style="color: var(--accent-cyan);">Dress Code Perempuan (Non-Muslim)</figcaption>
+                            </figure>
+                            <div>
+                                <ol class="feature-list" style="margin-top: 0; padding-left: 0;">
+                                    <li>Mengenakan kemeja biru (<em>baby blue</em>) sopan, rapi, dan tidak ketat.</li>
+                                    <li>Mengenakan celana panjang hitam, sopan, rapi, dan tidak ketat (boleh mengenakan rok formal).</li>
+                                    <li>Mengenakan inner berwarna putih (tidak ketat).</li>
+                                    <li>Mengenakan sepatu pantofel hitam, tidak berhak (flat).</li>
+                                    <li>Mengenakan kaos kaki hitam, wajib menutup mata kaki.</li>
+                                    <li>Tidak diperkenankan mengenakan aksesoris selain jam tangan.</li>
+                                    <li>Rambut diikat rapi sesuai ketentuan MATAF Universitas.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="store-badge-box">
+                            <strong style="color: #ffffff; display: block; margin-bottom: 6px;">💡 Referensi Pembelian Pakaian & Atribut:</strong>
+                            <div class="cta-btn-group" style="margin-top: 8px;">
+                                <a class="cta-button cta-btn-sm" href="https://id.shp.ee/y8na935f?fromSource=copy_link&smtt=0.0.9" target="_blank" rel="noopener">Link Pembelian Shopee 1</a>
+                                <a class="cta-button cta-btn-sm" href="https://id.shp.ee/aMeaQVqD" target="_blank" rel="noopener">Link Pembelian Shopee 2</a>
+                            </div>
+                            <p style="margin: 8px 0 0; font-size: 0.9rem; color: #bca8d0;">*Pakaian juga dapat ditemukan di offline market seperti JM Fashion, Jolie, dan toko pakaian formal lainnya.</p>
+                        </div>
                     </div>
+
+                    <!-- 4. Co-Card & Atribut -->
+                    <div class="content-panel" id="atribut">
+                        <h3>Ketentuan Co-Card MABA</h3>
+                        <p>Co-Card wajib dipakai selama seluruh rangkaian kegiatan MATAF berlangsung dan tidak boleh dilepas.</p>
+                        
+                        <ol class="feature-list" style="padding-left: 0;">
+                            <li>Co-Card dicetak/print dengan ukuran <strong>5,5 × 9 cm</strong>.</li>
+                            <li>Foto dapat diganti dengan foto pilihan masing-masing (ketentuan sopan & berhijab bagi mahasiswa baru putri).</li>
+                            <li>Co-Card yang telah dicetak kemudian dimasukkan ke dalam <strong>Name Tag jepit / peniti (Uk. 9 × 5,5 cm)</strong>.</li>
+                            <li>Warna kartu disesuaikan dengan Program Studi masing-masing:
+                                <ul style="margin-top: 6px; list-style-type: square; color: #cbb4da;">
+                                    <li><strong style="color: #60a5fa;">Bioteknologi:</strong> Warna Biru</li>
+                                    <li><strong style="color: #f87171;">Teknologi Informasi:</strong> Warna Merah</li>
+                                    <li><strong style="color: #facc15;">Arsitektur:</strong> Warna Kuning</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <!-- Co-Card Preview Grid -->
+                        <div class="cocard-grid">
+                            <div class="cocard-card">
+                                <img src="images/2026/cocard_ti.png" alt="Co-Card Teknologi Informasi" class="cocard-img">
+                                <div class="cocard-name">Teknologi Informasi</div>
+                                <div class="cocard-prodi-tag">Warna: Merah</div>
+                            </div>
+                            <div class="cocard-card">
+                                <img src="images/2026/cocard_bio.png" alt="Co-Card Bioteknologi" class="cocard-img">
+                                <div class="cocard-name">Bioteknologi</div>
+                                <div class="cocard-prodi-tag">Warna: Biru</div>
+                            </div>
+                            <div class="cocard-card">
+                                <img src="images/2026/cocard_arsi.png" alt="Co-Card Arsitektur" class="cocard-img">
+                                <div class="cocard-name">Arsitektur</div>
+                                <div class="cocard-prodi-tag">Warna: Kuning</div>
+                            </div>
+                            <div class="cocard-card">
+                                <img src="images/2026/cocard_holder.png" alt="Name Tag Jepit dan Peniti" class="cocard-img">
+                                <div class="cocard-name">Name Tag Jepit / Peniti</div>
+                                <div class="cocard-prodi-tag">Ukuran 9 × 5,5 cm</div>
+                            </div>
+                        </div>
+
+                        <div class="cta-btn-group" style="margin-top: 24px;">
+                            <a class="cta-button cta-primary" href="https://docs.google.com/document/d/1buTnvJz_uoZukOqeSm3nehYU03Mf9Bv3/edit?usp=sharing&ouid=103985217880032429195&rtpof=true&sd=true" target="_blank" rel="noopener">Akses Co-Card Canva</a>
+                            <a class="cta-button" href="https://docs.google.com/document/d/1IPwG5R1JlPZ79S9BtxQ68Z4ehn1htJTb/edit?usp=sharing&ouid=103985217880032429195&rtpof=true&sd=true" target="_blank" rel="noopener">Akses Co-Card Google Docs</a>
+                        </div>
+                    </div>
+
+                    <!-- 5. Kebutuhan Logo -->
+                    <div class="content-panel" id="logo">
+                        <h3>Kebutuhan Logo Resmi</h3>
+                        <p>Aset logo resmi di bawah ini wajib dicantumkan dalam pengerjaan penugasan video MATAF FST 2026. Klik tombol di bawah untuk mengunduh berkas logo master dalam format PNG transparan.</p>
+                        
+                        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px;">
+                            <figure style="flex: 1 1 130px; text-align: center; margin: 0; background: rgba(255, 255, 255, 0.03); padding: 14px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                                <img src="images/logo/Unisa.png" alt="Logo UNISA" style="max-width: 110px; height: 80px; object-fit: contain; display: block; margin: 0 auto 8px;">
+                                <figcaption style="font-family: 'Orbitron', monospace; font-size: 0.82rem; color: #ffffff;">UNISA</figcaption>
+                            </figure>
+                            <figure style="flex: 1 1 130px; text-align: center; margin: 0; background: rgba(255, 255, 255, 0.03); padding: 14px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                                <img src="images/logo/FST.png" alt="Logo FST" style="max-width: 110px; height: 80px; object-fit: contain; display: block; margin: 0 auto 8px;">
+                                <figcaption style="font-family: 'Orbitron', monospace; font-size: 0.82rem; color: #ffffff;">FST</figcaption>
+                            </figure>
+                            <figure style="flex: 1 1 130px; text-align: center; margin: 0; background: rgba(255, 255, 255, 0.03); padding: 14px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                                <img src="images/logomataf.svg" alt="Logo MATAF FST 2026" style="max-width: 110px; height: 80px; object-fit: contain; display: block; margin: 0 auto 8px;">
+                                <figcaption style="font-family: 'Orbitron', monospace; font-size: 0.82rem; color: #ffffff;">MATAF FST</figcaption>
+                            </figure>
+                            <figure style="flex: 1 1 130px; text-align: center; margin: 0; background: rgba(255, 255, 255, 0.03); padding: 14px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                                <img src="images/logo/LOGO_BEM_FST_unisa(1).png" alt="Logo BEM FST" style="max-width: 110px; height: 80px; object-fit: contain; display: block; margin: 0 auto 8px;">
+                                <figcaption style="font-family: 'Orbitron', monospace; font-size: 0.82rem; color: #ffffff;">BEM FST</figcaption>
+                            </figure>
+                            <figure style="flex: 1 1 130px; text-align: center; margin: 0; background: rgba(255, 255, 255, 0.03); padding: 14px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                                <img src="images/logo/IMM.jpg" alt="Logo IMM FST" style="max-width: 110px; height: 80px; object-fit: contain; display: block; margin: 0 auto 8px;">
+                                <figcaption style="font-family: 'Orbitron', monospace; font-size: 0.82rem; color: #ffffff;">IMM FST</figcaption>
+                            </figure>
+                        </div>
+
+                        <div style="margin-top: 24px;">
+                            <a class="cta-button cta-primary" href="https://drive.google.com/drive/folders/1Lfo45UMLyHDzeeRYjbZKS3PG7vitfqMD?hl=ID" target="_blank" rel="noopener">Download Master Logo (Google Drive)</a>
+                        </div>
+                    </div>
+
+                    <!-- 6. Pengumpulan Tugas -->
+                    <div class="content-panel" id="pengumpulan">
+                        <h3>Link Resmi Pengumpulan Tugas</h3>
+                        <p>Pastikan Anda telah memeriksa format dan kelengkapan penugasan sebelum mengunggah berkas ke tautan resmi panitia di bawah ini:</p>
+
+                        <!-- Tugas Mandiri -->
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: 12px; padding: 20px; margin-bottom: 18px;">
+                            <div class="deadline-badge cyan">Deadline: 13 September 2026</div>
+                            <h4 style="font-family: 'Orbitron', monospace; font-size: 1.15rem; color: #ffffff; margin-bottom: 8px;">1. Pengumpulan Tugas Mandiri (Upload Twibbon)</h4>
+                            <p style="font-size: 0.98rem; color: #cbb4da; margin-bottom: 14px;">Diisi oleh setiap mahasiswa baru setelah mengunggah foto twibbon di akun Instagram masing-masing.</p>
+                            <a class="cta-button cta-primary" href="https://bit.ly/Pengumpulan_Tugas_Mandiri_Mataf_FST2026" target="_blank" rel="noopener">Form Tugas Mandiri Twibbon</a>
+                        </div>
+
+                        <!-- Tugas Kelompok -->
+                        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: 12px; padding: 20px;">
+                            <div class="deadline-badge">Deadline: 12 September 2026</div>
+                            <h4 style="font-family: 'Orbitron', monospace; font-size: 1.15rem; color: #ffffff; margin-bottom: 8px;">2. Pengumpulan Tugas Kelompok (Tugas 1 & Tugas 2)</h4>
+                            <p style="font-size: 0.98rem; color: #cbb4da; margin-bottom: 14px;">Pengumpulan dilakukan oleh 1 perwakilan kelompok ke Google Drive dan Google Form panitia.</p>
+                            <div class="cta-btn-group">
+                                <a class="cta-button cta-primary" href="https://drive.google.com/drive/folders/1WB_WmkGoaHII8MScPTpBthFInMesi-SD" target="_blank" rel="noopener">Drive Folder Tugas Kelompok</a>
+                                <a class="cta-button" href="https://bit.ly/Pengumpulan_Tugas_MATAF_FST_1" target="_blank" rel="noopener">Form Tugas Kelompok FST 1</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Narahubung -->
+                    <div class="content-panel" id="narahubung">
+                        <h3>Narahubung (Contact Person)</h3>
+                        <p>Apabila terdapat kendala atau pertanyaan seputar MATAF FST 2026, silakan hubungi narahubung resmi panitia:</p>
+
+                        <div class="cp-grid" style="margin-top: 20px;">
+                            <div class="cp-card">
+                                <div class="info-icon">💬</div>
+                                <div class="info-details">
+                                    <h4>NESA</h4>
+                                    <p>+62 819-4604-8721</p>
+                                    <a class="about-more-link" style="margin-top: 10px; padding: 6px 14px; font-size: 0.75rem;" href="https://wa.me/6281946048721" target="_blank" rel="noopener">Chat WhatsApp</a>
+                                </div>
+                            </div>
+                            <div class="cp-card">
+                                <div class="info-icon">💬</div>
+                                <div class="info-details">
+                                    <h4>SEKAI</h4>
+                                    <p>0896-2351-0503</p>
+                                    <a class="about-more-link" style="margin-top: 10px; padding: 6px 14px; font-size: 0.75rem;" href="https://wa.me/6289623510503" target="_blank" rel="noopener">Chat WhatsApp</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
-                <!-- Perlengkapan now included inside Pengantar -->
-
-                <!-- Tambahan -->
-                <div class="content-panel" id="tambahan">
-                    <h3>Informasi Tambahan</h3>
-                    <p>Informasi tambahan terkait kegiatan, peraturan, serta hal teknis lain akan diumumkan secara berkala oleh panitia. 
-                       Pastikan peserta selalu memperhatikan pengumuman resmi di website dan grup komunikasi MATAF.</p>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-<footer>
-    <div class="footer-content">
-        <p class="copyright">
-            © 2025 MATAF FST - UNISA Yogyakarta. All rights reserved.
-        </p>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">
+                © 2026 MATAF FST -  FST UNISA Yogyakarta. All rights reserved.
+            </p>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="templatemo-electric-scripts.js"></script>
