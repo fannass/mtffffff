@@ -133,6 +133,37 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
-    // Initialize particles (lightweight)
+    // Smooth 60 FPS Text Rotator (Zero Layout Shift, Pure CSS Class Transition)
+    function initTextRotator() {
+        const textSets = document.querySelectorAll('.text-set');
+        if (!textSets || textSets.length <= 1) return;
+
+        let currentIndex = 0;
+        let isRotating = false;
+
+        setInterval(function() {
+            if (isRotating) return;
+            isRotating = true;
+
+            const currentSet = textSets[currentIndex];
+            const nextIndex = (currentIndex + 1) % textSets.length;
+            const nextSet = textSets[nextIndex];
+
+            if (currentSet) {
+                currentSet.classList.remove('active');
+                currentSet.classList.add('exiting');
+            }
+
+            setTimeout(function() {
+                if (currentSet) currentSet.classList.remove('exiting');
+                if (nextSet) nextSet.classList.add('active');
+                currentIndex = nextIndex;
+                isRotating = false;
+            }, 450);
+        }, 4500);
+    }
+
+    // Initialize components
     createParticles();
+    initTextRotator();
 });
