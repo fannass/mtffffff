@@ -845,7 +845,8 @@ nav.scrolled {
 }
 
 /* Hero Title Container */
-.hero-title-container {
+.hero-title-container,
+.text-rotator {
     position: relative;
     margin-bottom: 28px;
     display: flex;
@@ -854,6 +855,16 @@ nav.scrolled {
     justify-content: center;
     width: 100%;
     text-align: center;
+}
+
+.text-set {
+    display: none;
+    width: 100%;
+}
+
+.text-set.active,
+.text-set:first-child {
+    display: block;
 }
 
 /* Cyber 3D Glitch Typography */
