@@ -1,15 +1,15 @@
 // JavaScript Document
 /*
- * MATAF FST 2026 - Interactive & Animation Scripts
+ * MATAF FST 2026 - Interactive & Animation Scripts (Optimized for Mobile & 60fps)
  */
 
 document.addEventListener('DOMContentLoaded', function(){
-    // Create rich glowing cyber particles matching IG aesthetic
+    // Create glowing particles only on desktop to keep mobile blazing fast
     function createParticles() {
         const particlesContainer = document.getElementById('particles');
-        if (!particlesContainer) return;
+        if (!particlesContainer || window.innerWidth <= 768) return;
 
-        const particleCount = 45;
+        const particleCount = 20;
         const colors = ['#ff2a9d', '#00f0ff', '#a855f7', '#ffffff', '#ff6fd8', '#70f7ff'];
 
         for (let i = 0; i < particleCount; i++) {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
-    // Active navigation highlighting
+    // Active navigation highlighting & navbar scroll effect (Throttled for 60fps)
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-link');
 
@@ -67,18 +67,24 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
-    // Navbar scroll effect
+    let isScrolling = false;
     window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('navbar');
-        if (navbar) {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+        if (!isScrolling) {
+            window.requestAnimationFrame(function() {
+                const navbar = document.getElementById('navbar');
+                if (navbar) {
+                    if (window.scrollY > 40) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                }
+                if (sections && sections.length) updateActiveNav();
+                isScrolling = false;
+            });
+            isScrolling = true;
         }
-        if (sections && sections.length) updateActiveNav();
-    });
+    }, { passive: true });
 
     if (sections && sections.length) updateActiveNav();
 
@@ -199,18 +205,5 @@ document.addEventListener('DOMContentLoaded', function(){
                 setInterval(rotateText, 5000);
             }, 4000);
         }
-
-        // Subtle random glitch twitch
-        setInterval(() => {
-            const glitchTexts = document.querySelectorAll('.glitch-text');
-            glitchTexts.forEach(text => {
-                if (Math.random() > 0.9) {
-                    text.style.animation = 'none';
-                    setTimeout(() => {
-                        text.style.animation = '';
-                    }, 180);
-                }
-            });
-        }, 3000);
     }
 });
