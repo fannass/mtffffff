@@ -4,20 +4,21 @@
  */
 
 document.addEventListener('DOMContentLoaded', function(){
-    // Create glowing particles only on desktop to keep mobile blazing fast
+    // Create glowing particles (optimized: 6 lightweight particles on mobile, 20 on desktop)
     function createParticles() {
         const particlesContainer = document.getElementById('particles');
-        if (!particlesContainer || window.innerWidth <= 768) return;
+        if (!particlesContainer) return;
 
-        const particleCount = 20;
-        const colors = ['#ff2a9d', '#00f0ff', '#a855f7', '#ffffff', '#ff6fd8', '#70f7ff'];
+        const isMobile = window.innerWidth <= 768;
+        const particleCount = isMobile ? 6 : 20;
+        const colors = ['#ff2a9d', '#00f0ff', '#a855f7', '#ffffff', '#70f7ff'];
 
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = (Math.random() * 14) + 's';
-            particle.style.animationDuration = (Math.random() * 10 + 12) + 's';
+            particle.style.animationDelay = (Math.random() * 12) + 's';
+            particle.style.animationDuration = (Math.random() * 8 + (isMobile ? 14 : 10)) + 's';
 
             const chosenColor = colors[Math.floor(Math.random() * colors.length)];
             particle.style.setProperty('--particle-color', chosenColor);
@@ -132,78 +133,6 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
-    // Initialize particles
+    // Initialize particles (lightweight)
     createParticles();
-
-    // Text rotation with character animation
-    const textSets = document.querySelectorAll('.text-set');
-    if (textSets && textSets.length) {
-        let currentIndex = 0;
-        let isAnimating = false;
-
-        function wrapTextInSpans(element) {
-            if (!element) return;
-            const text = element.textContent || '';
-            element.innerHTML = text.split('').map((char, i) =>
-                `<span class="char" style="animation-delay: ${i * 0.04}s">${char === ' ' ? '&nbsp;' : char}</span>`
-            ).join('');
-        }
-
-        function animateTextIn(textSet) {
-            if (!textSet) return;
-            const glitchText = textSet.querySelector('.glitch-text');
-            const subtitle = textSet.querySelector('.subtitle');
-            
-            wrapTextInSpans(glitchText);
-            if (glitchText) glitchText.setAttribute('data-text', glitchText.textContent || '');
-            
-            if (subtitle) setTimeout(() => subtitle.classList.add('visible'), 700);
-        }
-
-        function animateTextOut(textSet) {
-            if (!textSet) return;
-            const chars = textSet.querySelectorAll('.char');
-            const subtitle = textSet.querySelector('.subtitle');
-            
-            chars.forEach((char, i) => {
-                char.style.animationDelay = `${i * 0.02}s`;
-                char.classList.add('out');
-            });
-            
-            if (subtitle) subtitle.classList.remove('visible');
-        }
-
-        function rotateText() {
-            if (isAnimating || textSets.length <= 1) return;
-            isAnimating = true;
-
-            const currentSet = textSets[currentIndex];
-            const nextIndex = (currentIndex + 1) % textSets.length;
-            const nextSet = textSets[nextIndex];
-
-            animateTextOut(currentSet);
-
-            setTimeout(() => {
-                if (currentSet) currentSet.classList.remove('active');
-                if (nextSet) nextSet.classList.add('active');
-                animateTextIn(nextSet);
-
-                currentIndex = nextIndex;
-                isAnimating = false;
-            }, 600);
-        }
-
-        // Initialize first text set
-        if (textSets[0]) {
-            textSets[0].classList.add('active');
-            animateTextIn(textSets[0]);
-        }
-
-        // Start rotation after initial display only if multiple sets exist
-        if (textSets.length > 1) {
-            setTimeout(() => {
-                setInterval(rotateText, 5000);
-            }, 4000);
-        }
-    }
 });
